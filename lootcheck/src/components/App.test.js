@@ -9,7 +9,15 @@ describe('App', () => {
     expect(app).toMatchSnapshot();
   });
 
-  it('contains a connected Wallet Component', () => { 
+  it('contains a connected Wallet Component', () => {
     expect(app.find('Connect(Wallet)').exists()).toBe(true);
+  });
+
+  it('contains a connected Loot Component', () => {
+    expect(app.find('Connect(Loot)').exists()).toBe(true);
+  });
+
+  it('contains a link to the coindesk price page', () => {
+    expect(app.find('a').props().href).toBe('https://www.coindesk.com/price');
   });
 });
